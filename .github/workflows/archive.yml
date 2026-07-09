@@ -1,0 +1,48 @@
+name: Archive CapoeiraWiki dump
+
+on:
+  workflow_dispatch:
+    inputs:
+      ia_item:
+        description: "Internet Archive item ID"
+        required: true
+        default: "miraheze-wiki-capoeirawiki-20260702"
+      version:
+        description: "Release version, for example 2026-07"
+        required: true
+        default: "2026-07"
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          pip install internetarchive
+
+      - name: Build release package
+        run: |
+          chmod +x scripts/make_release.sh
+          ./scripts/make_release.sh "${{ github.event.inputs.ia_item }}" "${{ github.event.inputs.version }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: CapoeiraWiki dataset ${{ github.event.inputs.version }}
+          body: |
+            Archived CapoeiraWiki dataset for ${{ github.event.inputs.version }}.
+
+            Source:
+            https://archive.org/details/${{ github.event.inputs.ia_item }}
+
+            Website:
+            https://capoeirawiki.org/
+          files: dist/capoeirawiki-${{ github.event.inputs.version }}.zip
