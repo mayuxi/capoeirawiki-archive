@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "CapoeiraWiki dataset"
+message: "If you use this dataset, please cite it as below."
+type: dataset
+
+authors:
+  - family-names: "Maltsev"
+    given-names: "Alexander"
+
+abstract: "Archived dataset of CapoeiraWiki, an open collaborative encyclopedia dedicated to capoeira history, culture, music, movements, biographies, organizations, and related topics."
+
+keywords:
+  - capoeira
+  - wiki
+  - encyclopedia
+  - martial arts
+  - Afro-Brazilian culture
+  - digital humanities
+  - open knowledge
+
+license: "CC-BY-SA-4.0"
+
+repository-code: "https://github.com/mayuxi/capoeirawiki-archive"
+url: "https://capoeirawiki.org/"
