@@ -1,0 +1,28 @@
+{
+  "title": "CapoeiraWiki dataset",
+  "upload_type": "dataset",
+  "description": "Archived dataset of CapoeiraWiki, an open collaborative encyclopedia dedicated to capoeira history, culture, music, movements, biographies, organizations, and related topics.",
+  "creators": [
+    {
+      "name": "Maltsev, Alexander",
+      "affiliation": "CapoeiraWiki"
+    }
+  ],
+  "keywords": [
+    "capoeira",
+    "wiki",
+    "encyclopedia",
+    "martial arts",
+    "Afro-Brazilian culture",
+    "digital humanities",
+    "open knowledge"
+  ],
+  "license": "cc-by-sa-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://capoeirawiki.org/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
